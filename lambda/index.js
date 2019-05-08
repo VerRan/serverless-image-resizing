@@ -17,9 +17,12 @@ if (process.env.ALLOWED_DIMENSIONS) {
 
 exports.handler = function(event, context, callback) {
   const key = event.queryStringParameters.key;
+  console.log(key);
   const match = key.match(/((\d+)x(\d+))\/(.*)/);
+  console.log(match)
   const dimensions = match[1];
   const width = parseInt(match[2], 10);
+  console.log(width)
   const height = parseInt(match[3], 10);
   const originalKey = match[4];
 
